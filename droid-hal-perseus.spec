@@ -10,6 +10,10 @@
 %define vendor_pretty Xiaomi
 %define device_pretty Mix 3
 
+# Skip mount units that droid-configs provides with correct device paths
+# (auto-generated ones use unresolvable logical partition names)
+%define makefstab_skip_entries /system_root /system /vendor /vendor/firmware_mnt /vendor/dsp /vendor/bt_firmware /mnt/vendor/persist
+
 %define installable_zip 1
 
 %include rpm/dhd/droid-hal-device.inc
